@@ -1,28 +1,26 @@
-const contatos = [
+let contatos = [
   { nome: "Lucas", fone: "(11) 98888-7777" },
   { nome: "Ana", fone: "(21) 97777-8888" },
   { nome: "Carlos", fone: "(31) 96666-5555" }
 ];
-const root = document.querySelector("#main");
+const root = document.querySelector("main");
 
 function Titulo(nome) {
   const titulo = document.createElement("h2");
   titulo.textContent = nome;
   return titulo;
 }
-function InputText(nome) {
+function InputText() {
   const input = document.createElement("input");
   input.type = "text";
   input.placeholder = "Nome do contato";
-  input.name = name;
   return input;
 }
 
-function InputTel(fone) {
+function InputTel() {
   const input = document.createElement("input");
   input.type = "tel";
   input.placeholder = "Fone do contato";
-  input.name = name;
   return input;
 }
 
@@ -55,7 +53,8 @@ function handleSubmit(event) {
     novoContato[key] = value;
   }
   contatos.push(novoContato);
-  navegaPara("contatos");
+  navegaPara('Meus Contatos');
+  MeusContatos();
 }
 function ListaContato() {
   const tabela = document.createElement("table");
